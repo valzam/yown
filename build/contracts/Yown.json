@@ -1,0 +1,126 @@
+{
+  "contractName": "Yown",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820f17550a488b94f1f07a36620c9d132bdfe67636386bea720fabb61dab71f4d760029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820f17550a488b94f1f07a36620c9d132bdfe67636386bea720fabb61dab71f4d760029",
+  "sourceMap": "60:18:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "60:18:0:-;;;;;",
+  "source": "pragma solidity ^0.4.18;\nimport \"../contracts/erc721.sol\";\n\ncontract Yown {\n\n}",
+  "sourcePath": "/home/valentin/development/solidity/yown/contracts/Yown.sol",
+  "ast": {
+    "absolutePath": "/home/valentin/development/solidity/yown/contracts/Yown.sol",
+    "exportedSymbols": {
+      "Yown": [
+        3
+      ]
+    },
+    "id": 4,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "absolutePath": "/home/valentin/development/solidity/yown/contracts/erc721.sol",
+        "file": "../contracts/erc721.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 4,
+        "sourceUnit": 56,
+        "src": "25:33:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3,
+        "linearizedBaseContracts": [
+          3
+        ],
+        "name": "Yown",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 4,
+        "src": "60:18:0"
+      }
+    ],
+    "src": "0:78:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/valentin/development/solidity/yown/contracts/Yown.sol",
+    "exportedSymbols": {
+      "Yown": [
+        3
+      ]
+    },
+    "id": 4,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "absolutePath": "/home/valentin/development/solidity/yown/contracts/erc721.sol",
+        "file": "../contracts/erc721.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 4,
+        "sourceUnit": 56,
+        "src": "25:33:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3,
+        "linearizedBaseContracts": [
+          3
+        ],
+        "name": "Yown",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 4,
+        "src": "60:18:0"
+      }
+    ],
+    "src": "0:78:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xfb88de099e13c3ed21f80a7a1e49f8caecf10df6",
+      "transactionHash": "0x2c220f82c46b005481dd8f3baad928f3dcd139d7839258ba463daff826609a74"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-03T10:59:54.047Z"
+}
