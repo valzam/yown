@@ -1,61 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pete's Pet Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>yown start</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:400|700" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+
+    <!--bootstrap 4 beta-->
+ 
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">Pete's Pet Shop</h1>
-          <hr/>
-          <br/>
-        </div>
-      </div>
 
-      <div id="petsRow" class="row">
-        <!-- PETS LOAD HERE -->
-      </div>
-    </div>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    <div id="petTemplate" style="display: none;">
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="panel panel-default panel-pet">
-          <div class="panel-heading">
-            <h3 class="panel-title">Scrappy</h3>
+  <header>
+
+<!-- Fixed navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand" href="#">
+          <img class="card-img-left" src="img/yown-logo.svg" alt="yown Logo">
+        </a>
+                  
+        <button id="nav-toggle" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsingNavbarMd" aria-controls="collapsingNavbarMd" aria-expanded="false" aria-label="Toggle navigation">    
+        <span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsingNavbarMd">
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Start<span class="sr-only">(current)</span></a>
+            </li> -->
+
+              <li class="nav-item justify-content-end">
+                <a class="nav-link" href="signin.html" style="color: #0099b9; text-transform: uppercase; font-size: 1.2rem; font-weight: 700; margin-top: .4rem; margin-left: 2rem;">Sign In</a>
+              </li>
+            </ul>
           </div>
-          <div class="panel-body">
-            <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
-            <br/><br/>
-            <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/>
-            <strong>Age</strong>: <span class="pet-age">3</span><br/>
-            <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
-            <button class="btn btn-default btn-adopt" type="button" data-id="0">Adopt</button>
-          </div>
         </div>
-      </div>
-    </div>
+      </nav>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </header>
+
+<!-- Begin page content -->
+<main>
+<div class="container">
+
+    <section style="margin-top: 120px;">
+
+        <p><a class="nav-link" href="signin.html" style="color: #0099b9; text-transform: uppercase; font-size: 2rem; font-weight: 700;">Sign In</a></p>
+
+    </section>
+
+</div>
+
+  </main>
+
+  <!--build:js js/scripts.min.js -->
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/custom.js"></script>
+  <!-- endbuild -->
+  
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFYpnO-vhSw0T9W8Ezo5PyyrhJobsNRVs&callback=initMap"
+  type="text/javascript"></script>
+
   </body>
-</html>
+</html> 
