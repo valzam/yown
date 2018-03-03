@@ -39,8 +39,12 @@ App = {
     $(document).on('signup', '.btn-adopt', App.handleSignUp);
   },
 
-  bindEvents: function() {
-    
+  loadAssets: function() {
+
+  },
+
+  handleSignUp: function() {
+
   }
 
 
