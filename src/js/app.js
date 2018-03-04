@@ -15,7 +15,7 @@ App = {
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     }
     web3 = new Web3(App.web3Provider);
-
+    console.log("Loading");
     return App.initContract();
   },
 
@@ -36,22 +36,121 @@ App = {
   },
 
   bindEvents: function() {
-    $(document).on('signup', '.btn-adopt', App.handleSignUp);
+    $(document).on('click', '.btn-register', App.handleRegistration);
+
   },
 
   loadAssets: function() {
+    var yownInstance;
 
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+    
+      var account = accounts[0];
+      console.log(account);
+      let result = App.contracts.Yown.deployed().then(function(instance) {
+        yownInstance = instance;
+
+        $('#pubKey').val(account);
+        $('#warranty').val("2020/01/03");
+        $('#description').val("Samsung Galaxy S9, 128GB Storage");
+        // Execute adopt as a transaction by sending account
+        return yownInstance.getAssetsByOwner(account);
+      }).then(function(result) {
+        console.log(result);
+        for (var a in result) {
+          web3.eth.getAccounts(function(error, accounts) {
+            if (error) {
+              console.log(error);
+            }
+          
+            var account = accounts[0];
+            App.contracts.Yown.deployed().then(function(instance) {
+              yownInstance = instance;
+              // Execute adopt as a transaction by sending account
+              return yownInstance.viewAsset(a);
+            }).then(function(result) {
+              var cList = $('#devices');
+
+              let desc = result[0];
+              let start = new Date(result[1]*1000);
+              let end = new Date(result[2]*1000);
+
+
+              $("#devices").append(
+              `<li class="list-group-item">
+              <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">${desc}</h4>
+                <p class="card-text">Warranty start: ${start}.</p>
+                <p class="card-text">Warranty end: ${end}.</p>
+              </div>
+            </div>
+            </li>`);
+
+
+
+            }).catch(function(err) {
+              console.log(err.message);
+            });
+          });
+        }
+      }).catch(function(err) {
+        console.log(err.message);
+      });
+    });
   },
 
-  handleSignUp: function() {
 
-  }
+  handleRegistration: function(event) {
+    event.preventDefault();
 
+    let pubkey = $('#pubKey').val();
+    let description = $('#description').val();
+    let endDate = $('#warranty').val();
+    endDate = new Date(endDate).getTime() / 1000
+    var yownInstance;
 
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+    
+      var account = accounts[0];
+      App.contracts.Yown.deployed().then(function(instance) {
+        yownInstance = instance;
+
+        var creationEvent = yownInstance.Creation();
+
+        creationEvent.watch(function(error, result){
+          if (!error)
+              {
+                //location.reload();
+                console.log(result);
+              } else {
+                  console.log(error);
+              }
+      });
+    
+    
+        // Execute adopt as a transaction by sending account
+        return yownInstance.createAsset(account, description, endDate);
+      }).then(function(result) {
+        console.log(result);
+      }).catch(function(err) {
+        console.log(err.message);
+      });
+    });
+  },
 };
 
 $(function() {
-  $(window).load(function() {
+  $(document).ready(function() {
     App.init();
   });
 });

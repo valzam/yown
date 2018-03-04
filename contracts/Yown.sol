@@ -7,6 +7,9 @@ contract Yown is Ownable, ERC721 {
     event Creation(uint assetId);
 
     uint registrationFee = 0.001 ether;
+    string public name = "Yown";
+    string public symbol = "YOW";
+    uint8 public decimals = 18;
     /*
     Definition of asset
     */
@@ -19,6 +22,7 @@ contract Yown is Ownable, ERC721 {
     }
     YownAsset[] assets;
     mapping(uint => address) assetToOwner;
+    mapping(address => uint) ownerAssetCount;
 
     /*
     Function to create a new asset. The seller of the assets calls this function
@@ -34,6 +38,7 @@ contract Yown is Ownable, ERC721 {
         ) - 1; // returns the length of the array, assetId is length - 1
 
         assetToOwner[assetId] = _owner;
+        ownerAssetCount[_owner]++;
         Creation(assetId);
         return assetId;
     }
@@ -62,11 +67,23 @@ contract Yown is Ownable, ERC721 {
     }
 
     function balanceOf(address _owner) public view returns (uint256 _balance) {
-        return 0;
+        return ownerAssetCount[_owner];
     }
 
     function ownerOf(uint256 _tokenId) public view returns (address _owner) {
         return assetToOwner[_tokenId];
     }
+
+    function getAssetsByOwner(address _owner) external view returns(uint[]) {
+    uint[] memory result = new uint[](ownerAssetCount[_owner]);
+    uint counter = 0;
+    for (uint i = 0; i < assets.length; i++) {
+      if (assetToOwner[i] == _owner) {
+        result[counter] = i;
+        counter++;
+      }
+    }
+    return result;
+  }
 
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>yown start</title>
+    <title>Crypto Store</title>
 
     <link href="https://fonts.googleapis.com/css?family=Chivo:400|700" rel="stylesheet">
 
@@ -27,7 +27,7 @@
       <div class="container">
 
         <a class="navbar-brand" href="#">
-          <img class="card-img-left" src="img/yown-logo.svg" alt="yown Logo">
+          CryptoStore - register your purchase
         </a>
                   
         <button id="nav-toggle" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsingNavbarMd" aria-controls="collapsingNavbarMd" aria-expanded="false" aria-label="Toggle navigation">    
@@ -39,10 +39,6 @@
             <!-- <li class="nav-item active">
               <a class="nav-link" href="#">Start<span class="sr-only">(current)</span></a>
             </li> -->
-
-              <li class="nav-item justify-content-end">
-                <a class="nav-link" href="signin.html" style="color: #0099b9; text-transform: uppercase; font-size: 1.2rem; font-weight: 700; margin-top: .4rem; margin-left: 2rem;">Sign In</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -56,8 +52,34 @@
 
     <section style="margin-top: 120px;">
 
-        <p><a class="nav-link" href="signin.html" style="color: #0099b9; text-transform: uppercase; font-size: 2rem; font-weight: 700;">Sign In</a></p>
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Your Public Key</label>
+          <input type="text" class="form-control" id="pubKey" aria-describedby="emailHelp" placeholder="">
+        </div>
 
+        <fieldset disabled>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" aria-describedby="emailHelp" placeholder="">
+          </div>
+        </fieldset>
+
+        <fieldset disabled>
+          <div class="form-group">
+            <label for="warranty">Warranty End Date</label>
+            <input type="text" class="form-control" id="warranty" aria-describedby="emailHelp" placeholder="2020/01/03">
+          </div>
+        </fieldset>
+
+
+
+        <button type="submit" id="registerSubmit" class="btn btn-primary btn-register">Submit</button>
+      </form>
+
+      <h2>Your devices</h2>
+      <ul class="list-group" id="devices">
+      </ul>
     </section>
 
 </div>
@@ -65,14 +87,15 @@
   </main>
 
   <!--build:js js/scripts.min.js -->
-    <script src="js/jquery.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/truffle-contract.js"></script>
+
   <!-- endbuild -->
-  
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFYpnO-vhSw0T9W8Ezo5PyyrhJobsNRVs&callback=initMap"
-  type="text/javascript"></script>
 
   </body>
 </html> 
